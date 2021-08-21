@@ -1,0 +1,13 @@
+{
+	"languageserver": {
+		"rust-analyzer": {
+			"updates": {
+				"prompt": "true",
+				"channel": "nightly"
+			},
+			"cargo.allFeatures": "true",
+			"checkOnSave.command": "clippy",
+			"filetypes": ["rs"]
+		}
+	}
+}

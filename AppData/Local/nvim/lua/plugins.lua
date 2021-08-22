@@ -17,6 +17,8 @@ return require('packer').startup(function()
 	use 'b3nj5m1n/kommentary'
 
 	use { 'neoclide/coc.nvim', branch = 'release' }
+
+	use 'Pocco81/AutoSave.nvim'
 	-- Use specific branch, dependency and run lua file after load
 	use {
 		'glepnir/galaxyline.nvim',

@@ -96,7 +96,8 @@ gls.left[11] = {
 gls.mid[1] = {
   ShowLspClient = {
 	  provider = function ()
-	  	return vim.fn['coc#status']()
+	  	-- return vim.fn['coc#status']()
+		-- return vim.fn[[%{coc#status()}%{get(b:,'coc_current_function','')}]]()
 	  end,
     icon = ' LSP:',
     highlight = {colors.cyan,colors.bg,'bold'}

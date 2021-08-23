@@ -1,5 +1,7 @@
 local function load ()
-	require'autosave'.setup()
+	require'autosave'.setup{
+		execution_message = ''
+	}
 end
 
 

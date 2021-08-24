@@ -11,7 +11,8 @@
 			},
 			"cargo.allFeatures": "true",
 			"checkOnSave.command": "clippy",
-			"filetypes": ["rs"]
+			"filetypes": ["rs"],
+			"rustfmt.enableRangeFormatting": "true"
 		}
 	}
 }

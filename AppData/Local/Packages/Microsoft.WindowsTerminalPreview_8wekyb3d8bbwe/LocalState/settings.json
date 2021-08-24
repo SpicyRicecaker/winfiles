@@ -43,6 +43,9 @@
             }
         ]
     },
+    "keybindings": [
+        {"command": null, "keys": "ctrl+space"}
+    ],
     "schemes": [
         {
             "background": "#32302F",

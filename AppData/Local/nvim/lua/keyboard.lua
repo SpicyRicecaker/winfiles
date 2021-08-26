@@ -21,6 +21,10 @@ local function load_keybindings()
 	vim.o.rnu = true
 	vim.o.number = true
 	vim.o.smarttab = true
+	vim.o.tabstop = 2
+	vim.o.shiftwidth = 2
+  vim.o.breakindent = true
+	vim.o.expandtab = true
 	vim.o.scl = 'number'
 	vim.o.hidden = true
 	vim.o.backupcopy = 'no'

@@ -6,5 +6,5 @@
     require 'statusline'
     require 'autopair'
     require 'nvimtree'
-    -- require 'comments'
+    require 'comments'
 end)()

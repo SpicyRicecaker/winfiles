@@ -2,7 +2,7 @@ Invoke-Expression (&starship init powershell)
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -EditMode Vi
-Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function AcceptSuggestion
 Set-PSReadLineKeyHandler -Chord "Ctrl+w" -Function BackwardDeleteWord
 
 $env:FZF_DEFAULT_COMMAND = 'fd'

@@ -1,7 +1,9 @@
 Invoke-Expression (&starship init powershell)
 
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineOption -EditMode Vi
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord "Ctrl+w" -Function BackwardDeleteWord
 
 $env:FZF_DEFAULT_COMMAND = 'fd'
 $env:FZF_CTRL_T_COMMAND = 'fd --type f'
@@ -15,7 +17,7 @@ $global:g = "$HOME\git"
 $global:nvim = "$HOME\AppData\Local\nvim"
 
 function dotgit () {
-	git --git-dir=$HOME/winfiles/ --work-tree=$HOME $args
+	git --git-dir=$HOME/winfiles.git/ --work-tree=$HOME $args
 }
 
 function ScreenOff {

@@ -3,5 +3,5 @@
 To enjoy your music locally from the cli
 
 ```shell
-mpv *.ogg --shuffle --loop-playlist
+mpv *.ogg --shuffle --loop-playlist --quiet
 ```

@@ -29,8 +29,26 @@ return require('packer').startup(function()
 
     use {
         'numToStr/Comment.nvim',
+        -- copied code from https://github.com/JoosepAlviste/nvim-ts-context-commentstring#commentnvim
+        -- not sure how slow this makes neovim, but hopefully it's async and it's still gotta be faster than vscode. Probably.
         config = function()
-            require('Comment').setup()
+            require('Comment').setup {
+                pre_hook = function(ctx)
+                    local U = require 'Comment.utils'
+
+                    local location = nil
+                    if ctx.ctype == U.ctype.block then
+                        location = require('ts_context_commentstring.utils').get_cursor_location()
+                    elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+                        location = require('ts_context_commentstring.utils').get_visual_start_location()
+                    end
+
+                    return require('ts_context_commentstring.internal').calculate_commentstring {
+                        key = ctx.ctype == U.ctype.line and '__default' or '__multiline',
+                        location = location,
+                    }
+                end,
+            }
             -- for some reason after some time vim started recognizing `ctrl+/` as `<C-/>` instead of `^_`
             vim.keymap.set('i', '<C-/>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR><Esc>A')
         end
@@ -39,6 +57,7 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
+        requires = { {'JoosepAlviste/nvim-ts-context-commentstring'} },
         config = function()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = { "lua", "rust", "toml", "markdown", "tsx", "typescript", "javascript", "html", "css", "json", "scheme"},
@@ -60,6 +79,10 @@ return require('packer').startup(function()
                     -- currently disabling as it's buggy with rust if let statements
                     -- vim default indent is good enough
                     enable = false
+                },
+                context_commentstring = { 
+                    enable = true,
+                    enable_autocmd = false
                 }
             }
         end,

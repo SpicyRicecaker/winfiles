@@ -5,8 +5,7 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+w" -Function BackwardDeleteWord
 
 # zoxide
 Invoke-Expression (& {
-    $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-    (zoxide init --hook $hook powershell | Out-String)
+    (zoxide init --hook pwd powershell | Out-String)
 })
 
 $global:g = "$HOME\git"

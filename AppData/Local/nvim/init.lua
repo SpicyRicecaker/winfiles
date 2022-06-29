@@ -91,5 +91,7 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
 
     -- debug 
-    use 'nvim-treesitter/playground'
+    -- use 'nvim-treesitter/playground'
+
+    use 'mattn/emmet-vim'
 end)

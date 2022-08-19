@@ -19,4 +19,9 @@ function dotgitlazy () {
 	lazygit --git-dir=$HOME/winfiles.git/ --work-tree=$HOME $args
 }
 
+function lookup () {
+	deno run --allow-net $HOME/git/lexico_scraper/main.ts $args
+}
+
+
 Invoke-Expression (&starship init powershell)

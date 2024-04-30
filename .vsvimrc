@@ -9,4 +9,4 @@ nnoremap <leader>m :vsc Edit.NextMethod<CR>
 nnoremap <leader>M :vsc Edit.PreviousMethod<CR>
 
 nnoremap gh :vsc Edit.QuickInfo<CR>
-
+inoremap <C-W> <C-o>:vsc Edit.WordDeleteToStart<CR>

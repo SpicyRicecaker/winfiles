@@ -1,0 +1,12 @@
+set ignorecase
+set smartcase
+set rnu
+
+let mapleader=","
+
+" break out of the tyranny of text! Navigate by method
+nnoremap <leader>m :vsc Edit.NextMethod<CR>
+nnoremap <leader>M :vsc Edit.PreviousMethod<CR>
+
+nnoremap gh :vsc Edit.QuickInfo<CR>
+

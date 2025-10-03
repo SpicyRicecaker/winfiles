@@ -1,8 +1,8 @@
---[[ if vim.g.vscode ~= nil then ]]
---[[     return ]]
---[[ end ]]
+if vim.g.vscode ~= nil then
+    return
+end
 
-require('plugins')
+-- require('plugins')
 
-vim.o.rnu = true
-vim.o.number = true
+-- vim.o.rnu = true
+-- vim.o.number = true
